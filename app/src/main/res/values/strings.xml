@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CIMPS 2016</string>
+    <string name="app_welcome">Welcome to CIMPS 2016!</string>
+    <string name="btnScanQR">Scan QR Code</string>
+</resources>
