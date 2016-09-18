@@ -3,7 +3,6 @@ package comfred.cimps2016;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
-import android.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 
@@ -26,20 +25,16 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
 
     @Override
     public void handleResult(Result result) {
-        // Take the user ID and make a request to the database server
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Información del Usuario");
-        builder.setMessage(result.getText());
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-
-        // Go back to the main menu
+        // Take the user id from the QR code and start the activity to see its data
         zxScanner.stopCamera();
-        startActivity(new Intent(this, UserActivity.class));
+        Intent intent = new Intent(getBaseContext(), UserActivity.class);
+        intent.putExtra(Config.KEY_CIMPER_ID, result.getText());
+        startActivity(intent);
     }
 
     @Override
     public void onClick(View v) {
+        // Scan a new assistant QR code
         if(v == btnScanQR){
             zxScanner = new ZXingScannerView(this);
             setContentView(zxScanner);
