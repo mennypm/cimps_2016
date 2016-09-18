@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        zxScanner = new ZXingScannerView(this);
+        zxScanner.setResultHandler(this);
+
         btnScanQR = (Button) findViewById(R.id.btnScanQR);
         btnScanQR.setOnClickListener(this);
     }
@@ -36,9 +39,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     public void onClick(View v) {
         // Scan a new assistant QR code
         if(v == btnScanQR){
-            zxScanner = new ZXingScannerView(this);
             setContentView(zxScanner);
-            zxScanner.setResultHandler(this);
             zxScanner.startCamera();
         }
     }

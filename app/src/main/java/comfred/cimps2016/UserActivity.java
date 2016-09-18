@@ -29,6 +29,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnCancel;
 
     private String id;
+    private Boolean isPayAccepted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,29 +94,20 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
             String gaffete = c.getString(Config.TAG_GAFFETE);
             String accept = c.getString(Config.TAG_ACCEPT);
 
-            Log.d(name, "NOMBRE OBTENIDO");
-            Log.d(afiliation, "AFILIACION OBTENIDA");
-            Log.d(gaffete, "GAFFETE OBTENIDO");
-            Log.d(accept, "PAGO OBTENIDO");
-
-            if(name.equals("null")){
-                // Could not retrieve user or this one does not exists
-                Toast.makeText(UserActivity.this, "No pudimos obtener datos del asistente. Intente de nuevo.", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(this, MainActivity.class));
+            // Display information from the assistant
+            txtName.setText(name);
+            txtAfiliation.setText(afiliation);
+            if(accept.equals("1")){
+                txtPay.setText("Efectuado");
+                isPayAccepted = true;
             }else{
-                // Display information from the assistant
-                txtName.setText(name);
-                txtAfiliation.setText(afiliation);
-                if(accept.equals("1")){
-                    txtPay.setText("Efectuado");
-                }else{
-                    txtPay.setText("NO efectuado");
-                }
-                if(gaffete.equals("1")){
-                    switchGaffete.setChecked(true);
-                }else{
-                    switchGaffete.setChecked(false);
-                }
+                txtPay.setText("NO efectuado");
+                isPayAccepted = false;
+            }
+            if(gaffete.equals("1")){
+                switchGaffete.setChecked(true);
+            }else{
+                switchGaffete.setChecked(false);
             }
         }catch(JSONException e){
             e.printStackTrace();
@@ -123,11 +115,21 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void setCimper(){
-        final String gaf;
+        final String name = txtName.getText().toString().trim();
+        final String afiliation = txtAfiliation.getText().toString().trim();
+        final String gaffete;
+        final String accept;
+
         if (switchGaffete.isChecked()){
-            gaf = "1";
+            gaffete = "1";
         }else{
-            gaf = "0";
+            gaffete = "0";
+        }
+
+        if (isPayAccepted){
+            accept = "1";
+        }else{
+            accept = "0";
         }
 
         class SetCimper extends AsyncTask<Void, Void, String>{
@@ -136,7 +138,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             protected void onPreExecute(){
                 super.onPreExecute();
-                loading = ProgressDialog.show(UserActivity.this, "Registrando...", "Espere...", false, false);
+                loading = ProgressDialog.show(UserActivity.this, "Actualizando...", "Espere...", false, false);
             }
 
             @Override
@@ -149,9 +151,18 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             protected String doInBackground(Void... params){
                 HashMap<String,String> hashMap = new HashMap<>();
-                hashMap.put(Config.KEY_CIMPER_GAFFETE, gaf);
+                hashMap.put(Config.KEY_CIMPER_ID, id);
+
+                // The value of the ID that is sent to the PHP script:
+                Log.d(id, "THE VALUE OF THE ID THAT IS SENT TO THE PHP SCRIPT");
+
+                hashMap.put(Config.KEY_CIMPER_NAME, name);
+                hashMap.put(Config.KEY_CIMPER_AFIL, afiliation);
+                hashMap.put(Config.KEY_CIMPER_GAFFETE, gaffete);
+                hashMap.put(Config.KEY_CIMPER_ACCEPT, accept);
 
                 RequestHandler rh = new RequestHandler();
+
                 String s = rh.sendPostRequest(Config.URL_SET_CIMPER, hashMap);
 
                 return s;
