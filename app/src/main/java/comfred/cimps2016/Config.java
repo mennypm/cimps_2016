@@ -5,8 +5,10 @@ package comfred.cimps2016;
  */
 public class Config {
     // Addresses of database connection and CRUD operations for CIMPS 2016
-    public static final String URL_GET_CIMPER = "http://104.236.197.92/android/cimps_databases_2016/getCimper.php?id=";
-    public static final String URL_SET_CIMPER = "http://104.236.197.92/android/cimps_databases_2016/setCimper.php";
+    //public static final String URL_GET_CIMPER = "http://104.236.197.92/android/cimps_databases_2016/getCimper.php?id=";
+    //public static final String URL_SET_CIMPER = "http://104.236.197.92/android/cimps_databases_2016/setCimper.php";
+    public static final String URL_GET_CIMPER = "http://cimps.cimat.mx/registration_system/android/getCimper.php?id=";
+    public static final String URL_SET_CIMPER = "http://cimps.cimat.mx/registration_system/android/setCimper.php";
 
     // Keys that will be used to send the request to the PHP scripts
     public static final String KEY_CIMPER_ID = "id";
