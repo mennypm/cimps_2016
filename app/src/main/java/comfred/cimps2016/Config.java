@@ -14,6 +14,7 @@ public class Config {
     public static final String KEY_CIMPER_ID = "id";
     public static final String KEY_CIMPER_NAME = "name";
     public static final String KEY_CIMPER_AFIL = "afiliation";
+    public static final String KEY_CIMPER_CATEGORY = "category";
     public static final String KEY_CIMPER_GAFFETE = "gaffete";
     public static final String KEY_CIMPER_ACCEPT = "accept";
 
@@ -22,6 +23,8 @@ public class Config {
     public static final String TAG_ID = "id";
     public static final String TAG_NAME = "name";
     public static final String TAG_AFIL = "afiliation";
+    public static final String TAG_CATEGORY = "category";
+    public static final String TAG_GROUP = "group";
     public static final String TAG_GAFFETE = "gaffete";
     public static final String TAG_ACCEPT = "accept";
 

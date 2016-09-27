@@ -23,6 +23,7 @@ import org.json.JSONObject;
 public class UserActivity extends AppCompatActivity implements View.OnClickListener{
     private EditText txtName;
     private EditText txtAfiliation;
+    private EditText txtCategory;
     private EditText txtPay;
     private Switch switchGaffete;
     private Button btnSave;
@@ -38,6 +39,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
 
         txtName = (EditText) findViewById(R.id.txtName);
         txtAfiliation = (EditText) findViewById(R.id.txtAfiliation);
+        txtCategory = (EditText) findViewById(R.id.txtCategory);
         txtPay = (EditText) findViewById(R.id.txtPay);
         switchGaffete = (Switch) findViewById(R.id.switchGaffete);
 
@@ -91,12 +93,14 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
 
             String name = c.getString(Config.TAG_NAME);
             String afiliation = c.getString(Config.TAG_AFIL);
+            String category = c.getString(Config.TAG_CATEGORY);
             String gaffete = c.getString(Config.TAG_GAFFETE);
             String accept = c.getString(Config.TAG_ACCEPT);
 
             // Display information from the assistant
             txtName.setText(name);
             txtAfiliation.setText(afiliation);
+            txtCategory.setText(category);
             if(accept.equals("1")){
                 txtPay.setText("Efectuado");
                 isPayAccepted = true;
