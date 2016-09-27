@@ -13,21 +13,34 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:text="@string/app_welcome"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/font_size"
+        android:gravity="center"
         android:id="@+id/txtWelcome"/>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:src="@drawable/cimps_logo"/>
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btnScanQR"
-        android:id="@+id/btnScanQR"/>
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center|bottom"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:text="@string/btnScanQR"
+            android:background="@color/colorCIMPS"
+            android:textColor="@color/colorBlank"
+            android:id="@+id/btnScanQR"/>
+
+    </LinearLayout>
 
 </LinearLayout>

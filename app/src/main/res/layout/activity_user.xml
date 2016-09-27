@@ -76,6 +76,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="@string/btnSave"
+        android:background="@color/colorCIMPS"
+        android:textColor="@color/colorBlank"
         android:id="@+id/btnSave"/>
 
     <Button
@@ -84,4 +86,5 @@
         android:layout_gravity="center"
         android:text="@string/btnCancel"
         android:id="@+id/btnCancel"/>
+
 </LinearLayout>

@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">CIMPS 2016</string>
-    <string name="app_welcome">Bienvenido al sistema de registro del CIMPS</string>
-    <string name="btnScanQR">Escanear QR</string>
-    <string name="txtName">Nombre del asistente</string>
-    <string name="txtAfiliation">Nombre de la afiliación</string>
-    <string name="txtCategory">Categoría del asistente</string>
-    <string name="txtPay">Pago</string>
-    <string name="txtGafete">Gafete</string>
-    <string name="btnSave">Guardar</string>
-    <string name="btnCancel">Cancelar</string>
-    <string name="txtGafeteHelp">Deslice el interruptor al entregar el gafete</string>
+<string name="app_name">CIMPS 2016</string>
+<string name="app_welcome">Bienvenido al sistema de registro del CIMPS</string>
+<string name="btnScanQR">Escanear código QR</string>
+<string name="txtName">Nombre del asistente</string>
+<string name="txtAfiliation">Nombre de la afiliación</string>
+<string name="txtCategory">Categoría del asistente</string>
+<string name="txtPay">Pago</string>
+<string name="txtGafete">Gafete</string>
+<string name="btnSave">Guardar</string>
+<string name="btnCancel">Cancelar</string>
+<string name="txtGafeteHelp">Deslice el interruptor al entregar el gafete</string>
 </resources>
