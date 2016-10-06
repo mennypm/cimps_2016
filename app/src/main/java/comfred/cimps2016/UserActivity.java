@@ -94,6 +94,9 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
             String gaffete = c.getString(Config.TAG_GAFFETE);
             String accept = c.getString(Config.TAG_ACCEPT);
 
+            // The payment information value
+            Log.d(accept, "THE ACCEPTED VALUE FROM ORDER");
+
             // Display information from the assistant
             txtName.setText(name);
             txtAfiliation.setText(afiliation);
@@ -101,9 +104,11 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
             if(accept.equals("1")){
                 txtPay.setText("Efectuado");
                 isPayAccepted = true;
-            }else{
+            }else if (accept.equals("0")){
                 txtPay.setText("NO efectuado");
                 isPayAccepted = false;
+            }else{
+                txtPay.setText("No se pudo recuperar info");
             }
             if(gaffete.equals("1")){
                 switchGaffete.setChecked(true);
@@ -153,10 +158,6 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
             protected String doInBackground(Void... params){
                 HashMap<String,String> hashMap = new HashMap<>();
                 hashMap.put(Config.KEY_CIMPER_ID, id);
-
-                // The value of the ID that is sent to the PHP script:
-                Log.d(id, "THE VALUE OF THE ID THAT IS SENT TO THE PHP SCRIPT");
-
                 hashMap.put(Config.KEY_CIMPER_NAME, name);
                 hashMap.put(Config.KEY_CIMPER_AFIL, afiliation);
                 hashMap.put(Config.KEY_CIMPER_GAFFETE, gaffete);
