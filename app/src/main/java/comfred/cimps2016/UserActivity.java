@@ -32,7 +32,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user);
+        this.setContentView(R.layout.activity_user);
 
         txtName = (EditText) findViewById(R.id.txtName);
         txtAfiliation = (EditText) findViewById(R.id.txtAfiliation);
