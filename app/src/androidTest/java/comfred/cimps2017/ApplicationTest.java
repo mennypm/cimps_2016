@@ -1,4 +1,4 @@
-package comfred.cimps2016;
+package comfred.cimps2017;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

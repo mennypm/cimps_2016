@@ -1,7 +1,8 @@
-package comfred.cimps2016;
+package comfred.cimps2017;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.AsyncTask;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
 import java.util.HashMap;
@@ -72,8 +74,8 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             protected String doInBackground(Void... params){
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequestParam(Config.URL_GET_CIMPER, id);
-                return s;
+                String json = rh.sendGetRequestParam(Config.URL_GET_CIMPER, id);
+                return json;
             }
         }
 
@@ -87,7 +89,6 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
             JSONObject jsonObject = new JSONObject(json);
             JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
             JSONObject c = result.getJSONObject(0);
-
             String name = c.getString(Config.TAG_NAME);
             String afiliation = c.getString(Config.TAG_AFIL);
             String category = c.getString(Config.TAG_CATEGORY);
@@ -102,16 +103,29 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
             txtAfiliation.setText(afiliation);
             txtCategory.setText(category);
             if(accept.equals("1")){
+                txtPay.setTextColor(ContextCompat.getColor(this, R.color.colorStrongOK));
+                txtPay.setBackgroundColor(ContextCompat.getColor(this, R.color.colorOK));
                 txtPay.setText("Efectuado");
                 isPayAccepted = true;
             }else if (accept.equals("0")){
+                txtPay.setTextColor(ContextCompat.getColor(this, R.color.colorStrongNotOK));
+                txtPay.setBackgroundColor(ContextCompat.getColor(this, R.color.colorNotOK));
                 txtPay.setText("NO efectuado");
                 isPayAccepted = false;
             }else{
-                txtPay.setText("No se pudo recuperar info");
+                txtPay.setText("No se pudo recuperar la info");
             }
             if(gaffete.equals("1")){
                 switchGaffete.setChecked(true);
+                if (result.length() > 1) {
+                    Intent intent = new Intent(getBaseContext(), Workshop.class);
+                    intent.putExtra(Config.KEY_CIMPER_ID, id);
+                    intent.putExtra("json", json);
+                    startActivity(intent);
+                } else {
+                    Toast toast = Toast.makeText(this, "El usuario no se ha registrado a ningún taller",
+                            Toast.LENGTH_LONG);
+                }
             }else{
                 switchGaffete.setChecked(false);
             }
@@ -120,7 +134,7 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void setCimper(){
+        private void setCimper(){
         final String name = txtName.getText().toString().trim();
         final String afiliation = txtAfiliation.getText().toString().trim();
         final String gaffete;

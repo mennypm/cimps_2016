@@ -1,6 +1,9 @@
-package comfred.cimps2016;
+package comfred.cimps2017;
 
-import android.graphics.Color;
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -18,13 +21,20 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
 
         zxScanner = new ZXingScannerView(this);
         zxScanner.setResultHandler(this);
 
         btnScanQR = (Button) findViewById(R.id.btnScanQR);
         btnScanQR.setOnClickListener(this);
+
+        // Requesting the permission for the camera
+        if(ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA},
+                    Config.CAMERA_REQUEST_CODE);
+        }
     }
 
     @Override

@@ -1,4 +1,4 @@
-package comfred.cimps2016;
+package comfred.cimps2017;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -34,7 +34,7 @@ public class RequestHandler {
             //Initializing Url
             url = new URL(requestURL);
 
-            //Creating an httmlurl connection
+            //Creating an httpurl connection
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
             //Configuring connection properties

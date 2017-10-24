@@ -6,6 +6,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!-- TODO: Set the navigationBarColor for the SDK 21 and keep the compatibility with previous SDK
+        <item name="android:navigationBarColor">@color/colorPrimary</item>-->
     </style>
 
 </resources>

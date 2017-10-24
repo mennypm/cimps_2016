@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#303F9F</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#182640</color>
+    <color name="colorPrimaryDark">#182640</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorBlank">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
     <color name="colorCIMPS">#550000</color>
+    <color name="colorOK">#ccffcc</color>
+    <color name="colorStrongOK">#00804d</color>
+    <color name="colorNotOK">#ffcccc</color>
+    <color name="colorStrongNotOK">#b30000</color>
 </resources>

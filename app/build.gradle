@@ -5,7 +5,7 @@ android {
     buildToolsVersion "24.0.2"
 
     defaultConfig {
-        applicationId "comfred.cimps2016"
+        applicationId "comfred.cimps2017"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1

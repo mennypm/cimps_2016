@@ -8,23 +8,30 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="comfred.cimps2016.MainActivity">
+    tools:context="comfred.cimps2017.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_welcome"
-        android:textColor="@color/colorBlack"
+        android:textColor="@color/colorPrimary"
         android:textSize="@dimen/font_size"
         android:gravity="center"
         android:id="@+id/txtWelcome"/>
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="120dp"
         android:layout_marginBottom="15dp"
         android:layout_marginTop="25dp"
-        android:src="@drawable/cimps_logo"/>
+        android:src="@drawable/cimps_2017_logo"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/cimps_2017_description"/>
 
     <LinearLayout
         android:layout_width="match_parent"
