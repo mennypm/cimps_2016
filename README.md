@@ -4,7 +4,7 @@ Esta aplicación, está destinada al personal de Staff del Congreso Internaciona
 
 ## Comenzando
 
-
+Si usted desea modificar esta aplicación, 
 
 ### Prerequisites
 
