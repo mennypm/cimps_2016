@@ -8,7 +8,7 @@ El código fuente de esta aplicación se encuentra disponible para su modificaci
 
 ### Prerrequisitos
 
-What things you need to install the software and how to install them
+Para que la aplicación pueda ser modificada necesitas 
 
 ```
 Give examples
