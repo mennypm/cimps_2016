@@ -8,80 +8,56 @@ El código fuente de esta aplicación se encuentra disponible para su modificaci
 
 ### Prerrequisitos
 
-Para que la aplicación pueda ser modificada necesitas 
+Para que la aplicación pueda ser modificada y compilada por medio de Android Studio, es necesario tener instalado las siguientes características:
 
-```
-Give examples
-```
+#### Windows
 
-### Installing
+* Windows 7/8/10 (32 o 64 bits).
+* 2 GB de RAM (8 GB de RAM recomendado).
+* 2 GB de espacio libre mínimo (4 GB recomendado).
+* Resolución mínima de 1.280 x 800.
+* Java 8.
+* 64 bits y procesador Intel (emulador).
 
-A step by step series of examples that tell you have to get a development env running
+#### Mac
 
-Say what the step will be
+* Mac OS X 10.8.5 o superior.
+* 2 GB de RAM (8 GB de RAM recomendado).
+* 2 GB de espacio libre mínimo (4 GB recomendado).
+* Resolución mínima de 1.280 x 800.
+* Java 6.
 
-```
-Give the example
-```
+#### Linux
 
-And repeat
+* GNOME o KDE Desktop.
+* Ubuntu…
+* 64 bits / 32 bits.
+* GNU C (glibc) 2.1 o superior.
+* 2 GB de RAM (8 GB de RAM recomendado).
+* 2 GB de espacio libre mínimo (4 GB recomendado).
+* Resolución mínima de 1.280 x 800.
+* Java 8.
+* 64 bits y procesador Intel (emulador).
 
-```
-until finished
-```
+### Instalación
 
-End with an example of getting some data out of the system or using it for a little demo
+Para que la aplicación pueda ser utilizada, es necesario que en el dispositivo móvil se disponga de una versión 5.0 de Android (Nivel de API 21) o superior.
 
-## Running the tests
+## Despliegue
 
-Explain how to run the automated tests for this system
+La aplicación pasa a producción por medio de la instalación de un apk, no es firmada, ni subida a Play Store. Esto se puede modificar en versiones posteriores, si así se requiere.
 
-### Break down into end to end tests
+## Elementos de construcción:
 
-Explain what these tests test and why
+* [Java](https://www.java.com/es/download/) - El lenguaje nativo de Android
+* [Android Studio](https://developer.android.com/studio/index.html) - El IDE oficial para desarrollar en Android
 
-```
-Give an example
-```
+## Autor
 
-### And coding style tests
+* **Freddy Íniguez** - *Líder tecnológico y desarrollador web* - [cimps_2016](https://github.com/freddyiniguez/cimps_2016)
 
-Explain what these tests test and why
+Vea también la lista de [contribuyentes](https://github.com/mennypm/cimps_2017/graphs/contributors) quienes han participado en este proyecto.
 
-```
-Give an example
-```
+## Licencia
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+Aún no se han establecido acuerdos para la expedición de una licencia para esta aplicación.
