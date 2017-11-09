@@ -1,12 +1,12 @@
 # CIMPS 2017
 
-Esta aplicación, está destinada al personal de Staff del Congreso Internacional de Mejora de Procesos de Software en su edición 2017, durante el proceso de entrega de Kits Personales.
+Esta aplicación, está destinada al personal de Staff del Congreso Internacional de Mejora de Procesos de Software en su edición 2017, durante el proceso de entrega de Kits Personales. Así también, durante la toma de lista a los talleres que se impartirán en dicho congreso.
 
 ## Comenzando
 
-Si usted desea modificar esta aplicación, 
+El código fuente de esta aplicación se encuentra disponible para su modificación y pueda implementarse en próximas ediciones de este congreso, o si desea implementarla en algún evento de la misma naturaleza.
 
-### Prerequisites
+### Prerrequisitos
 
 What things you need to install the software and how to install them
 
